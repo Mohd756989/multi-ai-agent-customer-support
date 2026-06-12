@@ -1,0 +1,14 @@
+.env
+.env.*
+__pycache__/
+*.py[cod]
+*.pyo
+.DS_Store
+*.db
+logs/
+data/faiss_index/
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
