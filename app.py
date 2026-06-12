@@ -20,7 +20,7 @@ def main():
         query = input("You: ").strip()
 
         if query.lower() == "exit":
-            print("Existing from the application....!")
+            print("Goodbye!")
             break
 
         if not query:
