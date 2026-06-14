@@ -5,7 +5,6 @@ from prompts.generator_prompt import build_generator_prompt
 from utils.logger import get_logger
 
 logger = get_logger(__name__)
-llm = get_llm()
 
 
 def generator_agent(state: SupportState) -> dict:
@@ -14,6 +13,7 @@ def generator_agent(state: SupportState) -> dict:
     If a specialist agent (e.g. order_agent) already set state['response'],
     use it directly. Otherwise synthesize from retrieved docs and history.
     """
+    llm = get_llm()
     if state.get("response"):
         content = state["response"]
         logger.info("Generator using pre-set response from specialist agent")
