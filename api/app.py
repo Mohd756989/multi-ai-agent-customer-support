@@ -19,7 +19,7 @@ API_PREFIX = "/api/v1"
 
 
 def create_app() -> FastAPI:
-    load_env(override=False)  # Load environment variables from .env file
+    load_env()  # Load environment variables from .env file
 
     app = FastAPI(
         title="NovaTech Support API",

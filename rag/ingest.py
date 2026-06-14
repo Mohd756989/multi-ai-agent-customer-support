@@ -30,7 +30,7 @@ PDF_FILES = [
 
 
 def ingest():
-    load_env(override=False)
+    load_env()
 
     all_docs = []
     for filename in PDF_FILES:
