@@ -13,7 +13,7 @@ tiktoken
 pypdf
 
 # Environment
-python-dotenv
+python-dotenv>=1.0.0
 
 # API
 fastapi>=0.111.0
