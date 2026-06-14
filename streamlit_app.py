@@ -10,6 +10,7 @@ import uuid
 import os
 import httpx
 import streamlit as st
+import time
 from datetime import datetime
 
 # ── Config ───────────────────────────────────────────────────────────────────
@@ -397,9 +398,11 @@ if send and user_input and user_input.strip():
     st.session_state.messages.append({"role": "user", "content": query, "ts": ts_now()})
     st.session_state.total_queries += 1
 
-    with st.spinner("Routing to agents…"):
+    with st.spinner("loading..."):
+        time.sleep(0.5)  # Simulate thinking time while waiting for API response
         try:
-            data = api_chat(query, st.session_state.thread_id)
+            with st.spinner("Generating responses..."):
+                data = api_chat(query, st.session_state.thread_id)
             st.session_state.api_status = "ok"
 
             response = data.get("response", "")
