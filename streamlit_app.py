@@ -13,7 +13,7 @@ import streamlit as st
 from datetime import datetime
 
 # ── Config ───────────────────────────────────────────────────────────────────
-API_BASE_URL = os.getenv("API_BASE_URL", "http://localhost:8000/api/v1")
+API_BASE_URL = "https://multi-ai-agent.up.railway.app/api/v1" # <-- UPDATE if your API is hosted elsewhere
 REQUEST_TIMEOUT = 60  # seconds — agent pipeline can take a moment
 
 # ── Page config ──────────────────────────────────────────────────────────────
