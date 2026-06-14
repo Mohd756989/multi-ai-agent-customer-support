@@ -3,6 +3,7 @@ POST /api/v1/chat  — main multi-agent conversation endpoint
 """
 
 from __future__ import annotations
+import traceback
 import uuid
 from fastapi import APIRouter, Depends, HTTPException
 from langchain_core.messages import HumanMessage
@@ -56,6 +57,7 @@ async def chat(
         raise HTTPException(status_code=500, detail=str(e))
     except Exception as e:
         logger.error(f"Agent error for thread {thread_id}: {e}")
+        logger.error(f"FULL TRACEBACK:\n{traceback.format_exc()}") 
         raise HTTPException(status_code=500, detail=f"Agent error: {str(e)}")
 
     # Persist both turns
