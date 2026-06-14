@@ -84,7 +84,7 @@ html, body, [data-testid="stAppViewContainer"] {
 .nt-status-dot.offline { background: #EF4444; box-shadow: 0 0 6px rgba(239,68,68,0.6); animation: none; }
 @keyframes pulse-dot { 0%,100%{opacity:1}50%{opacity:.4} }
 
-.nt-chat-window { padding: 24px 32px; display: flex; flex-direction: column; gap: 20px; min-height: calc(100vh - 200px); }
+.nt-chat-window { padding: 24px 32px; display: flex; flex-direction: column; gap: 20px; min-height: auto; }
 
 .nt-msg { display: flex; gap: 12px; align-items: flex-start; animation: msg-in 0.25s ease-out; }
 @keyframes msg-in { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
