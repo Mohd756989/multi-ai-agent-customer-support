@@ -6,7 +6,6 @@ __pycache__/
 .DS_Store
 *.db
 logs/
-data/faiss_index/
 *.egg-info/
 dist/
 build/

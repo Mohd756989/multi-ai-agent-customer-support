@@ -13,7 +13,7 @@ import streamlit as st
 from datetime import datetime
 
 # ── Config ───────────────────────────────────────────────────────────────────
-API_BASE_URL = "https://brave-dedication-production-f77b.up.railway.app" # <-- UPDATE if your API is hosted elsewhere
+API_BASE_URL = "https://brave-dedication-production-f77b.up.railway.app/api/v1" # <-- UPDATE if your API is hosted elsewhere
 REQUEST_TIMEOUT = 60  # seconds — agent pipeline can take a moment
 
 # ── Page config ──────────────────────────────────────────────────────────────
