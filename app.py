@@ -8,7 +8,7 @@ logger = get_logger(__name__)
 
 
 def main():
-    load_env()
+    load_env(override=False)
     graph = build_graph()
 
     thread_id = str(uuid.uuid4())
