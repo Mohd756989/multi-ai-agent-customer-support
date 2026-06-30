@@ -44,6 +44,7 @@ def ingest():
 
     if not all_docs:
         logger.error("No documents loaded. Aborting ingestion.")
+        
         return
 
     chunks = create_chunks(all_docs)
