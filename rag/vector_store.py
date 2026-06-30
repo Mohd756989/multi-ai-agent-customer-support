@@ -31,6 +31,7 @@ def get_vector_store() -> FAISS:
     global _vector_store
     if _vector_store is not None:
         return _vector_store
+    
 
     if not os.path.exists(FAISS_INDEX_PATH):
         raise FileNotFoundError(
@@ -46,3 +47,6 @@ def get_vector_store() -> FAISS:
     )
     logger.info(f"Vector store loaded from {FAISS_INDEX_PATH}")
     return _vector_store
+
+
+
