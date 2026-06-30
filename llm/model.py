@@ -4,8 +4,8 @@ from langchain_groq import ChatGroq
 _llm = None  # module-level singleton
 
 
-def get_llm(model: str = "llama-3.3-70b-versatile", temperature: float = 0) -> ChatOpenAI:
-    """Return a shared ChatOpenAI instance (lazy singleton)."""
+def get_llm(model: str = "llama-3.3-70b-versatile", temperature: float = 0) -> ChatGroq:
+    """Return a shared ChatGroq instance (lazy singleton)."""
     global _llm
     if _llm is None:
         api_key = os.getenv("GROQ_API_KEY")
