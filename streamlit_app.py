@@ -397,10 +397,8 @@ if send and user_input and user_input.strip():
 
     st.session_state.messages.append({"role": "user", "content": query, "ts": ts_now()})
     st.session_state.total_queries += 1
-
-    with st.spinner("loading..."):
-        time.sleep(0.5)  # Simulate thinking time while waiting for API response
-        try:
+  # Simulate thinking time while waiting for API response
+    try:
             with st.spinner("Generating responses..."):
                 data = api_chat(query, st.session_state.thread_id)
             st.session_state.api_status = "ok"
@@ -424,7 +422,7 @@ if send and user_input and user_input.strip():
                 "intent": intent, "ts": ts_now(),
             })
 
-        except httpx.ConnectError:
+    except httpx.ConnectError:
             st.session_state.api_status = "error"
             st.session_state.messages.append({
                 "role": "agent",
@@ -436,13 +434,13 @@ if send and user_input and user_input.strip():
                 ),
                 "intent": "", "ts": ts_now(),
             })
-        except httpx.HTTPStatusError as e:
+    except httpx.HTTPStatusError as e:
             st.session_state.messages.append({
                 "role": "agent",
                 "content": f"⚠ API error {e.response.status_code}: {e.response.text[:200]}",
                 "intent": "", "ts": ts_now(),
             })
-        except Exception as e:
+    except Exception as e:
             st.session_state.messages.append({
                 "role": "agent",
                 "content": f"⚠ Unexpected error: {str(e)[:200]}",
