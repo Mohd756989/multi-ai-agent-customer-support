@@ -1,6 +1,8 @@
-from langchain_openai import OpenAIEmbeddings
+from langchain_huggingface import HuggingFaceEmbeddings
 
 
-def get_embeddings() -> OpenAIEmbeddings:
-    """Return an OpenAI embeddings instance."""
-    return OpenAIEmbeddings()
+def get_embeddings():
+    """Return a HuggingFace embeddings instance."""
+    return HuggingFaceEmbeddings(
+        model_name="sentence-transformers/all-MiniLM-L6-v2"
+    )

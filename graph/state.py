@@ -12,6 +12,7 @@ class SupportState(TypedDict):
     retrieved_docs: list
     customer_info: dict
     response: str
+    memory:str
     confidence: float
     ticket_id: str
     customer_id: str

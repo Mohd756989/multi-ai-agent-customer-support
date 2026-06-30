@@ -8,7 +8,7 @@ def load_env():
         load_dotenv()  # Only load .env in local/dev environments
     
     
-    if not os.getenv("OPENAI_API_KEY"):
+    if not os.getenv("GROQ_API_KEY"):
         raise EnvironmentError(
             "OPENAI_API_KEY is not set. Add it to your .env file or environment."
         )
