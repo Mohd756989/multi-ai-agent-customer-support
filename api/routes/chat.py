@@ -41,6 +41,7 @@ async def chat(
         "retrieved_docs": [],
         "customer_data": {},
         "response":      "",
+        "memory":         "",
         "escalation":    False,
         "customer_id":   request.customer_id or "",
         "messages":      [HumanMessage(content=request.query)],

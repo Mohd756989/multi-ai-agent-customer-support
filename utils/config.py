@@ -10,5 +10,5 @@ def load_env():
     
     if not os.getenv("GROQ_API_KEY"):
         raise EnvironmentError(
-            "OPENAI_API_KEY is not set. Add it to your .env file or environment."
+            "GROQ_API_KEY is not set. Add it to your .env file or environment."
         )
